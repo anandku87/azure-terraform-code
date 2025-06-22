@@ -1,4 +1,4 @@
-subscription_id       = "your-subscription-id-here"
+subscription_id       = "471957fc-3c1d-4d06-925b-21b4bc773be4"
 location              = "West India"
 vnet_name             = "infra-development"
 resource_group_name   = "Azure-infra-anand"
