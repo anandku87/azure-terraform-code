@@ -11,3 +11,23 @@ module "network" {
     lb           = "10.0.3.0/28"
   }
 }
+module "instance_master" {
+  source              = "./modules/instance"
+  name                = "master"
+  subnet_name         = "controlplane"
+  resource_group_name = var.resource_group_name
+  location            = var.location
+  subnet_id           = module.network.subnet_ids["controlplane"]
+}
+
+module "instance_slave" {
+  source              = "./modules/instance"
+  name                = "slave"
+  subnet_name         = "worker"
+  resource_group_name = var.resource_group_name
+  location            = var.location
+  subnet_id           = module.network.subnet_ids["worker"]
+}
+
+
+
