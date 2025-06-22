@@ -10,3 +10,13 @@ subnets = {
   lb           = "10.0.3.0/28"
 }
 ssh_public_key_path = "/home/codespace/.ssh/id_rsa.pub"
+vm_instances = [
+  {
+    name        = "master"
+    subnet_name = "controlplane"
+  },
+  {
+    name        = "slave"
+    subnet_name = "worker"
+  }
+]
