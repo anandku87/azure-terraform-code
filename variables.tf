@@ -3,9 +3,13 @@ variable "subscription_id" {
 }
 
 variable "location" {
-  type    = string
-  default = "eastus"
+  type = string
 }
+
+variable "vnet_name" {
+  type = string
+}
+
 variable "resource_group_name" {
   type = string
 }
@@ -14,11 +18,6 @@ variable "address_space" {
   type = list(string)
 }
 
-variable "vnet_name" {
-  type = string
-}
-
 variable "subnets" {
   type = map(string)
 }
-
