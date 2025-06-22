@@ -11,22 +11,16 @@ module "network" {
     lb           = "10.0.3.0/28"
   }
 }
-module "instance_master" {
-  source              = "./modules/instance"
-  name                = "master"
-  subnet_name         = "controlplane"
-  resource_group_name = var.resource_group_name
-  location            = var.location
-  subnet_id           = module.network.subnet_ids["controlplane"]
-}
+module "instances" {
+  for_each = { for vm in var.vm_instances : vm.name => vm }
 
-module "instance_slave" {
   source              = "./modules/instance"
-  name                = "slave"
-  subnet_name         = "worker"
+  name                = each.value.name
+  subnet_name         = each.value.subnet_name
+  subnet_id           = module.network.subnet_ids[each.value.subnet_name]
   resource_group_name = var.resource_group_name
   location            = var.location
-  subnet_id           = module.network.subnet_ids["worker"]
+  ssh_public_key_path = var.ssh_public_key_path
 }
 
 
