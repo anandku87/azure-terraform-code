@@ -9,3 +9,4 @@ subnets = {
   worker       = "10.0.2.0/28"
   lb           = "10.0.3.0/28"
 }
+ssh_public_key_path = "/home/codespace/.ssh/id_rsa.pub"
