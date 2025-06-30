@@ -6,8 +6,8 @@ module "network" {
   address_space       = var.address_space
 
   subnets = {
-    aks-node-subnet = var.aks-node-subnet    
-    aks-lb-subnet          = var.aks-lb-subnet
+    aks-node-subnet = var.subnets["aks-node-subnet"]
+    aks-lb-subnet   = var.subnets["aks-lb-subnet"]
   }
 }
 
