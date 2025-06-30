@@ -22,13 +22,13 @@ variable "subnets" {
   type = map(string)
 }
 
-variable "ssh_public_key_path" {
-  type = string
-}
+#variable "ssh_public_key_path" {
+#  type = string
+#}
 
-variable "vm_instances" {
-  type = list(object({
-    name        = string
-    subnet_name = string
-  }))
-}
+#variable "vm_instances" {
+#  type = list(object({
+#    name        = string
+#    subnet_name = string
+#  }))
+#}
