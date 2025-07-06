@@ -13,7 +13,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
     node_count          = var.agent_node_count
     min_count           = var.min_node_count
     max_count           = var.max_node_count
-    enable_auto_scaling = var.min_node_count != var.max_node_count
+   # enable_auto_scaling = var.min_node_count != var.max_node_count
     wn_subnet_prefix      = var.wn_subnet_prefix
   }
 
