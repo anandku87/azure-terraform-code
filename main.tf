@@ -14,5 +14,5 @@ module "AKS" {
   user_node_pool_name = var.user_node_pool_name
   resource_group_name = var.resource_group_name
   location            = var.location
-  wn_subnet_prefix    = var.wn_subnet_prefix 
+  wn_subnet_prefix    = module.network.wn_subnet_id
 }
