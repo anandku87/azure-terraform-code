@@ -33,10 +33,6 @@ resource "azurerm_kubernetes_cluster" "aks" {
   #  enable_private_cluster = true
   #}
 
-  role_based_access_control {
-    enabled = true
-  }
-
   local_account_disabled = false
 
   tags = {
