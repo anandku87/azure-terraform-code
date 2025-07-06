@@ -29,9 +29,9 @@ resource "azurerm_kubernetes_cluster" "aks" {
     #docker_bridge_cidr = "172.17.0.1/16"
   }
 
-  api_server_access_profile {
-    enable_private_cluster = true
-  }
+  #api_server_access_profile {
+  #  enable_private_cluster = true
+  #}
 
   role_based_access_control {
     enabled = true
