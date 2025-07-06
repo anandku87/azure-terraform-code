@@ -80,8 +80,8 @@ variable "max_node_count" {
 
 # Load Balancer Configuration
 variable "load_balancer_sku" {
-  description = "SKU for the AKS load balancer"
-  type        = string
-  default     = "standard"
+  #description = "SKU for the AKS load balancer"
+  type = string
+  default = "standard"
 }
 
