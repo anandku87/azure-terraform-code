@@ -30,10 +30,8 @@ resource "azurerm_kubernetes_cluster" "aks" {
   }
 
   api_server_access_profile {
-    private_cluster {
-      enabled = var.enable_private_cluster
+    enable_private_cluster = true
   }
-}
 
   role_based_access_control {
     enabled = true
