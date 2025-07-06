@@ -14,7 +14,7 @@ variable "resource_group_name" {
   type = string
 }
 
-variable "subnet_id" {
+variable "wn_subnet_prefix" {
   type = string
 }
 
