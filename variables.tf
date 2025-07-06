@@ -77,10 +77,7 @@ variable "max_node_count" {
   default = 2
 }
 
-variable "wn_subnet_id" {
-  type        = string
-  description = "Subnet ID for the AKS node pool"
-}
+
 
 
 
