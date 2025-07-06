@@ -6,3 +6,10 @@ module "network" {
   address_space       = var.address_space
   wn_subnet_prefix    = var.wn_subnet_prefix
 }
+
+module "AKS" {
+  source = "./module/AKS"
+  aks_name = var.aks_name
+  dns_prefix = var.dns_prefix
+  user_node_pool_name = var.user_node_pool_name
+}
