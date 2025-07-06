@@ -78,9 +78,5 @@ variable "max_node_count" {
 }
 
 
-# Load Balancer Configuration
-variable "load_balancer_sku" { 
-  type = string 
-  default = "standard"
-}
+
 
