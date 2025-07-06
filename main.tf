@@ -8,7 +8,7 @@ module "network" {
 }
 
 module "AKS" {
-  source = "./module/AKS"
+  source = "./modules/AKS"
   aks_name = var.aks_name
   dns_prefix = var.dns_prefix
   user_node_pool_name = var.user_node_pool_name
