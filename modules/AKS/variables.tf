@@ -18,6 +18,11 @@ variable "wn_subnet_prefix" {
   type = string
 }
 
+variable "wn_subnet_id" {
+  type        = string
+  description = "The subnet ID for the AKS node pool"
+}
+
 variable "enable_private_cluster" {
   type    = bool
   default = true
