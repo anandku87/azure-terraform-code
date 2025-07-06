@@ -79,8 +79,7 @@ variable "max_node_count" {
 
 
 # Load Balancer Configuration
-variable "load_balancer_sku" {
-  description = "AKS load balancer"
+variable "load_balancer_sku" { 
   type = string 
   default = "standard"
 }
