@@ -7,6 +7,6 @@ resource "azurerm_kubernetes_cluster_node_pool" "user" {
   min_count             = var.min_node_count
   max_count             = var.max_node_count
   enable_auto_scaling   = var.min_node_count != var.max_node_count
-  vnet_subnet_id      = var.wn_subnet_id
+  vnet_subnet_id = var.wn_subnet_id
   mode                  = "User"
 }
