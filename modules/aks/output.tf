@@ -20,4 +20,6 @@ output "default_node_pool_name" {
 }
 
 output "user_node_pool_name" {
-  value      
+  value       = azurerm_kubernetes_cluster_node_pool.custom_user_pool.name
+  description = "Name of the custom user-defined node pool"
+}
