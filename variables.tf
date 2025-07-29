@@ -29,7 +29,7 @@ variable "aks_cluster_name" {
   type = string
 }
 variable "dns_prefix" {
-  type = string
+  type = optional(string)
 }
 variable "kubernetes_version" {
   type = string
