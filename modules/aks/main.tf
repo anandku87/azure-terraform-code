@@ -15,7 +15,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
     node_count = var.node_count_min
     min_count  = var.node_count_min
     max_count  = var.node_count_max
-    enable_auto_scaling = true
+    #enable_auto_scaling = true
   }
 
   identity {
