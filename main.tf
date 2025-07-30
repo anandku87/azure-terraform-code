@@ -11,7 +11,7 @@ module "aks" {
   source                = "./modules/aks"
   resource_group_name   = var.resource_group_name
   location              = var.location
-  cluster_name          = var.aks_cluster_name
+  cluster_name          = var.cluster_name
   kubernetes_version    = var.kubernetes_version
   aks_pricing_tier      = var.aks_pricing_tier
   enable_private_cluster = var.enable_private_cluster
