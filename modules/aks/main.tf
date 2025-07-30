@@ -29,6 +29,6 @@ resource "azurerm_kubernetes_cluster" "aks" {
     dns_service_ip     = "10.0.0.10"
     service_cidr       = "10.0.0.0/16"    
     outbound_type      = "userDefinedRouting"
-    pod_cidr           = "10.244.0.0/16"
+    #pod_cidr           = "10.244.0.0/16"
   } 
 }
