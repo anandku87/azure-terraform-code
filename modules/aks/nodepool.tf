@@ -4,7 +4,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "user" {
   vm_size               = var.node_vm_size
   os_sku                = "Ubuntu"
   mode                  = "User"
-  enable_auto_scaling   = true
+  #enable_auto_scaling   = true
   min_count             = var.node_count_min
   max_count             = var.node_count_max
   orchestrator_version  = var.kubernetes_version
