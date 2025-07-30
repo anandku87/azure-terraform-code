@@ -25,6 +25,7 @@ module "aks" {
   node_count_min              = var.node_count_min
   node_count_max              = var.node_count_max
   cluster_preset              = var.cluster_preset
+  subnet_id                   = module.network.wn_subnet_id
 
   depends_on = [module.network]
 }
