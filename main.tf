@@ -24,6 +24,7 @@ module "aks" {
   node_vm_size                = var.node_vm_size
   node_count_min              = var.node_count_min
   node_count_max              = var.node_count_max
-
   cluster_preset              = var.cluster_preset
+
+  depends_on = [module.network]
 }
