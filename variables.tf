@@ -68,7 +68,7 @@ variable "user_node_pool_name" {
 variable "node_vm_size" {
   description = "VM size for node pool"
   type        = string
-  default     = "Standard_D2als_v6"
+  default     = "Standard D2pls v6"
 }
 
 variable "node_count_min" {
