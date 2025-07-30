@@ -1,17 +1,21 @@
 resource "azurerm_kubernetes_cluster" "aks" {
-  name                = var.aks_cluster_name
+  name                = var.cluster_name
   location            = var.location
   resource_group_name = var.resource_group_name
-  dns_prefix          = var.dns_prefix
+  dns_prefix          = "${var.cluster_name}-dns"
 
   kubernetes_version  = var.kubernetes_version
-  private_cluster_enabled = var.enable_private_network
+  private_cluster_enabled = var.enable_private_cluster
+  sku_tier            = var.aks_pricing_tier
 
   default_node_pool {
-    name       = "default"
-    node_count = var.node_count
-    vm_size    = var.vm_size
-    vnet_subnet_id = var.subnet_id
+    name       = var.user_node_pool_name
+    vm_size    = var.node_vm_size
+    os_sku     = "Ubuntu"
+    node_count = var.node_count_min
+    min_count  = var.node_count_min
+    max_count  = var.node_count_max
+    enable_auto_scaling = true
   }
 
   identity {
@@ -21,13 +25,12 @@ resource "azurerm_kubernetes_cluster" "aks" {
   network_profile {
     network_plugin     = "azure"
     network_policy     = "azure"
-    load_balancer_sku  = "standard"
     dns_service_ip     = "10.0.0.10"
     service_cidr       = "10.0.0.0/16"
     docker_bridge_cidr = "172.17.0.1/16"
+    outbound_type      = "userDefinedRouting"
+    pod_cidr           = "10.244.0.0/16"
   }
 
-  tags = {
-    environment = "dev"
-  }
+  depends_on = [module.network]
 }
